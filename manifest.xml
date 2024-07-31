@@ -53,9 +53,45 @@
                     <TaskpaneId>ButtonId1</TaskpaneId>
                     <SourceLocation resid="Taskpane.Url"/>
                   </Action>
+                       <!-- <Action xsi:type="ExecuteFunction">
+                        <FunctionName>dataReformat</FunctionName>
+                    </Action> -->
                 </Control>
               </Group>
             </OfficeTab>
+
+            <CustomTab id="TabHome1">
+              <Group id="CommandsGroup1">
+                <Label resid="CommandsGroup.Label1"/>
+                <Icon>
+                  <bt:Image size="16" resid="TFN-16.16x16"/>
+                  <bt:Image size="32" resid="TFN-32.32x32"/>
+                  <bt:Image size="80" resid="TFN-80.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TaskpaneButton1">
+                  <Label resid="TaskpaneButton1.Label1"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton1.Label1"/>
+                    <Description resid="TaskpaneButton1.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="TFN-16.16x16"/>
+                    <bt:Image size="32" resid="TFN-32.32x32"/>
+                    <bt:Image size="80" resid="TFN-80.80x80"/>
+                  </Icon>
+                  <!-- <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action> -->
+                     <Action xsi:type="ExecuteFunction">
+                        <FunctionName>dataReformat</FunctionName>
+                    </Action>
+                </Control>
+              </Group>
+              <Label resid="customTabLabl1"/>
+            </CustomTab>
+
+
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -75,10 +111,16 @@
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Event data reformatter"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Start"/>
+
+        <bt:String id="customTabLabl1" DefaultValue="TFN"/>
+        <bt:String id="CommandsGroup.Label1" DefaultValue="Event data reformatter"/>
+        <bt:String id="TaskpaneButton1.Label1" DefaultValue="Start"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Your Event data reformatter add-in loaded succesfully. Go to the HOME tab and click the 'Strat' button to get started."/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Start"/>
+        
+        <bt:String id="TaskpaneButton1.Tooltip" DefaultValue="Click to Start"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
