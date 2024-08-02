@@ -1,85 +1,174 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
-  <Id>eaab3012-3490-40d2-a35c-9d0205b5c97f</Id>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
+  <Id>f75804f1-d7bf-4dc1-951d-0aceeb41d87f</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Contoso</ProviderName>
+  <ProviderName>SignifyCRM</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Event data reformatter"/>
-  <Description DefaultValue="A template to get started."/>
-  <IconUrl DefaultValue="https://aamirhusnain.github.io/Event-data-reformatter/assets/TFN-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://aamirhusnain.github.io/Event-data-reformatter/assets/TFN-64.png"/>
+  <DisplayName DefaultValue="SignifyCRM"/>
+  <Description DefaultValue="A template to get started SignifyCRM."/>
+  <IconUrl DefaultValue="https://aamirhusnain.github.io/signifycrm/assets/Signify-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://aamirhusnain.github.io/signifycrm/assets/Signify-128.png"/>
   <SupportUrl DefaultValue="https://www.contoso.com/help"/>
   <AppDomains>
     <AppDomain>https://www.contoso.com</AppDomain>
+    <AppDomain>https://demo.signifycrm.net</AppDomain>
+    <AppDomain>https://demo.signifycrm.net/outlook-addin</AppDomain>
+    <AppDomain>https://demo.icxcrm.net/sgenable_41</AppDomain>
+    
   </AppDomains>
   <Hosts>
-    <Host Name="Workbook"/>
+    <Host Name="Mailbox"/>
   </Hosts>
-  <DefaultSettings>
-    <SourceLocation DefaultValue="https://aamirhusnain.github.io/Event-data-reformatter/taskpane.html"/>
-  </DefaultSettings>
-  <Permissions>ReadWriteDocument</Permissions>
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <Hosts>
-      <Host xsi:type="Workbook">
-        <DesktopFormFactor>
-          <GetStarted>
-            <Title resid="GetStarted.Title"/>
-            <Description resid="GetStarted.Description"/>
-            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
-          </GetStarted>
-          <FunctionFile resid="Commands.Url"/>
-          <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <OfficeTab id="TabHome">
-              <Group id="CommandsGroup">
-                <Label resid="CommandsGroup.Label"/>
-                <Icon>
-                  <bt:Image size="16" resid="TFN-16.16x16"/>
-                  <bt:Image size="32" resid="TFN-32.32x32"/>
-                  <bt:Image size="80" resid="TFN-80.80x80"/>
-                </Icon>
-                <Control xsi:type="Button" id="TaskpaneButton">
-                  <Label resid="TaskpaneButton.Label"/>
-                  <Supertip>
-                    <Title resid="TaskpaneButton.Label"/>
-                    <Description resid="TaskpaneButton.Tooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="TFN-16.16x16"/>
-                    <bt:Image size="32" resid="TFN-32.32x32"/>
-                    <bt:Image size="80" resid="TFN-80.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>ButtonId1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-        </DesktopFormFactor>
-      </Host>
-    </Hosts>
-    <Resources>
-      <bt:Images>
-        <bt:Image id="TFN-16.16x16" DefaultValue="https://aamirhusnain.github.io/Event-data-reformatter/assets/TFN-16.png"/>
-        <bt:Image id="TFN-32.32x32" DefaultValue="https://aamirhusnain.github.io/Event-data-reformatter/assets/TFN-32.png"/>
-        <bt:Image id="TFN-80.80x80" DefaultValue="https://aamirhusnain.github.io/Event-data-reformatter/assets/TFN-80.png"/>
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://aamirhusnain.github.io/Event-data-reformatter/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://aamirhusnain.github.io/Event-data-reformatter/taskpane.html"/>
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Event data reformatter"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Start"/>
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="Your Event data reformatter add-in loaded succesfully. Go to the HOME tab and click the 'Strat' button to get started."/>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Start"/>
-      </bt:LongStrings>
-    </Resources>
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://aamirhusnain.github.io/signifycrm/taskpane.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+      <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" />
+  </Rule>
+  <!-- <Permissions>ReadWriteItem</Permissions>
+<Rule xsi:type="RuleCollection" Mode="Or">
+  <Rule xsi:type="ItemIs" ItemType="Message" />
+  <Rule xsi:type="ItemIs" ItemType="Appointment" />
+</Rule> -->
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.3">
+          <bt:Set Name="Mailbox"/>
+        </bt:Sets>
+      </Requirements>
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <DesktopFormFactor>
+            <FunctionFile resid="Commands.Url"/>
+            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="msgComposeGroup">
+                  <Label resid="GroupLabel"/>
+                  <Control xsi:type="Button" id="msgComposeOpenPaneButton">
+                    <Label resid="TaskpaneButton.Label"/>
+                    <Supertip>
+                      <Title resid="TaskpaneButton.Label"/>
+                      <Description resid="TaskpaneButton.Tooltip"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16x16"/>
+                      <bt:Image size="32" resid="Icon.32x32"/>
+                      <bt:Image size="80" resid="Icon.80x80"/>
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="Taskpane.Url"/>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+            
+             <ExtensionPoint xsi:type="MessageReadCommandSurface">
+                <OfficeTab id="TabDefault">
+                  <Group id="msgReadGroup">
+                    <Label resid="GroupLabel"/>
+                    <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                      <Label resid="TaskpaneButton.Label"/>
+                      <Supertip>
+                        <Title resid="TaskpaneButton.Label"/>
+                        <Description resid="TaskpaneButton.Tooltip"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="Taskpane.Url"/>
+                      </Action>
+                    </Control>
+                  </Group>
+                </OfficeTab>
+            </ExtensionPoint>
+
+            
+             <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
+                <OfficeTab id="TabDefault">
+                  <Group id="msgAttendeeGroup">
+                    <Label resid="GroupLabel"/>
+                    <Control xsi:type="Button" id="msgAttendeeOpenPaneButton">
+                      <Label resid="TaskpaneButton.Label"/>
+                      <Supertip>
+                        <Title resid="TaskpaneButton.Label"/>
+                        <Description resid="TaskpaneButton.Tooltip"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="Taskpane.Url"/>
+                      </Action>
+                    </Control>
+                  </Group>
+                </OfficeTab>
+            </ExtensionPoint>
+
+
+             <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+                <OfficeTab id="TabDefault">
+                  <Group id="msgOrganizerGroup">
+                    <Label resid="GroupLabel"/>
+                    <Control xsi:type="Button" id="msgOrganizerOpenPaneButton">
+                      <Label resid="TaskpaneButton.Label"/>
+                      <Supertip>
+                        <Title resid="TaskpaneButton.Label"/>
+                        <Description resid="TaskpaneButton.Tooltip"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="Taskpane.Url"/>
+                      </Action>
+                    </Control>
+                  </Group>
+                </OfficeTab>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+      <Resources>
+        <bt:Images>
+          <bt:Image id="Icon.16x16" DefaultValue="https://aamirhusnain.github.io/signifycrm/assests/Signify-16.png"/>
+          <bt:Image id="Icon.32x32" DefaultValue="https://aamirhusnain.github.io/signifycrm/assets/Signify-32.png"/>
+          <bt:Image id="Icon.80x80" DefaultValue="https://aamirhusnain.github.io/signifycrm/assets/Signify-80.png"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="Commands.Url" DefaultValue="https://aamirhusnain.github.io/signifycrm/commands.html"/>
+          <bt:Url id="Taskpane.Url" DefaultValue="https://aamirhusnain.github.io/signifycrm/taskpane.html"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="GroupLabel" DefaultValue="SignifyCRM"/>
+          <bt:String id="TaskpaneButton.Label" DefaultValue="Start"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens SignifyCRM add-in a task pane."/>
+          <bt:String id="ActionButton.Tooltip" DefaultValue="Perform an action when clicked."/>
+        </bt:LongStrings>
+      </Resources>
+    </VersionOverrides>
   </VersionOverrides>
 </OfficeApp>

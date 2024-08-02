@@ -1,2 +1,2 @@
-Office.onReady((function(){})),Office.actions.associate("action",(function(e){var i={type:Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,message:"Performed action.",icon:"Icon.80x80",persistent:!0};Office.context.mailbox.item.notificationMessages.replaceAsync("ActionPerformanceNotification",i),e.completed()}));
+Office.onReady((function(){})),Office.actions.associate("action",(function(e){var i,o={type:Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,message:"Performed action.",icon:"Icon.80x80",persistent:!0};null===(i=Office.context.mailbox.item)||void 0===i||i.notificationMessages.replaceAsync("ActionPerformanceNotification",o),e.completed()}));
 //# sourceMappingURL=commands.js.map
